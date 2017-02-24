@@ -167,3 +167,7 @@ footer nav ul li:after {
 footer nav ul.list-unstyled li a {
   color: #85d6a0;
 }
+
+footer nav ul.list-unstyled li a.current {
+  color: #9cffbd;
+}
