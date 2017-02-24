@@ -6,22 +6,37 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Gina's Blog</title>
 
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-    crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700|Playfair+Display" rel="stylesheet">
-    <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700|Playfair+Display" rel="stylesheet">
+  <link rel="stylesheet" href="{{site.baseurl}}/css/main.css">
 </head>
 
 <body>
 
-  <main>
-    {{ content }}  
-  </main>
+  {% if page.url != '/' %}
+    {% include nav.html %}
+  {% endif %}
   
+  <main>
+    {{ content }}
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          {% include nav.html %}
+        </div>
+      </div>
+    </div>
+  </footer>
+
   <script src="rellax.js"></script>
+  {% if page.url == '/' %}
   <script>
     var rellax = new Rellax('.rellax');
   </script>
+  {% endif %}
 </body>
 
 </html>
