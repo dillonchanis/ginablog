@@ -1,0 +1,35 @@
+---
+layout: template
+---
+
+<header class="post-mast" style="background: url('{{site.baseurl}}{{ page.featured-image }}')">
+  <div class="container blog-nav nav-padding-top">
+    <div class="pull-right">
+      {% include nav.html %}
+    </div>
+  </div>
+  <div class="container">
+    <div class="vertical-center">
+      <p class="category underline text-center">{{ page.categories }}</p>
+
+      <h1>{{ page.title }}</h1>
+      <h2 class="subtitle text-center">{{ page.subtitle }}</h2>
+    </div>  
+  </div>
+</header>
+
+<article class="container">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2 post-details">
+      <p>
+        By: {{ page.author }} <br />
+        on {{ page.date | date_to_long_string }}
+      </p>
+    </div>
+    <div class="col-md-8 col-md-offset-2 post-content">
+      {{ content }}
+    </div>
+  </div>
+</article>
+
+<!-- Next/Prev Post Goes here -->
