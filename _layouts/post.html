@@ -2,7 +2,7 @@
 layout: template
 ---
 
-<header class="post-mast" style="background: url('{{site.baseurl}}{{ page.featured-image }}')">
+<header class="post-mast" style="background-image: url('{{site.baseurl}}{{ page.featured-image }}')">
   <div class="container blog-nav nav-padding-top">
     <div class="pull-right">
       {% include nav.html %}
@@ -22,7 +22,7 @@ layout: template
   <div class="row">
     <div class="col-md-8 col-md-offset-2 post-details">
       <p>
-        By: {{ page.author }} <br />
+        {{ page.author }} <br />
         on {{ page.date | date_to_long_string }}
       </p>
     </div>
