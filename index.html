@@ -62,26 +62,12 @@ layout: template
       <div class="col-md-6 col-md-offset-1">
         <h2 class="underline">Recent Articles</h2>
 
+        {% for post in site.posts limit: 4 %}
         <article>
-          <span class="date">January 8, 2017</span> <br />
-          <a href=""><span class="title">Muladhara</span></a>
+          <time class="date">{{ post.date | date: "%B %-d, %Y" }}</time> <br />
+          <a href="{{ post.permalink }}"><span class="title">{{ post.title }}</span></a>
         </article>
-
-        <article>
-          <span class="date">January 25, 2017</span> <br />
-          <a href=""><span class="title">Health and Meditation</span></a>
-        </article>
-
-        <article>
-          <span class="date">February 2, 2017</span> <br />
-          <a href=""><span class="title">Benefits of Kale</span></a>
-        </article>
-
-        <article>
-          <span class="date">February 14, 2017</span> <br />
-          <a href=""><span class="title">Atherosclerosis: A Primer</span></a>
-        </article>
-
+        {% endfor %}
       </div>
     </div>
     <div class="row">
