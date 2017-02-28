@@ -1,5 +1,5 @@
----
-layout: blog
+--- 
+layout: blog 
 ---
 
 
@@ -15,8 +15,10 @@ layout: blog
     </div>
     <div class="row row-padding">
       <div class="col-md-8 col-md-offset-2 text-center">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc rhoncus sit amet arcu eu auctor. Vivamus rhoncus quis leo in egestas. Aenean sit amet sapien sed nulla pharetra luctus in quis elit. </p>
-        <p>Phasellus eget erat iaculis, ullamcorper justo et, dapibus velit. Donec varius diam id quam maximus, eu tincidunt odio rutrum. Mauris et lacinia leo. Duis tempor ultrices pharetra.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc rhoncus sit amet arcu eu auctor. Vivamus rhoncus quis
+          leo in egestas. Aenean sit amet sapien sed nulla pharetra luctus in quis elit. </p>
+        <p>Phasellus eget erat iaculis, ullamcorper justo et, dapibus velit. Donec varius diam id quam maximus, eu tincidunt
+          odio rutrum. Mauris et lacinia leo. Duis tempor ultrices pharetra.</p>
       </div>
     </div>
   </div>
@@ -31,11 +33,11 @@ layout: blog
       <h2 class="subtitle text-center">Farm Living</h2>
 
       <div class="call-to-action text-center">
-        <a href="" class="btn btn-primary">
+        <a href="/blog/helping-the-animals" class="btn btn-primary">
           Read Article
         </a>
       </div>
-    </div> 
+    </div>
   </div>
 </section>
 
@@ -51,89 +53,56 @@ layout: blog
     </div>
     <div class="row row-padding">
       <div class="col-md-8 col-md-offset-2 text-center">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris fringilla dolor eu sagittis vestibulum. Mauris justo nibh, eleifend et fringilla id, molestie sed neque.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris fringilla dolor eu sagittis vestibulum. Mauris justo
+          nibh, eleifend et fringilla id, molestie sed neque.</p>
       </div>
     </div>
 
     <!-- Articles -->
-    <div class="row article-row">
-      <div class="col-md-3 col-md-offset-2">
-        <img src="{{site.baseurl}}/images/blog/smoothie.jpg" class="img-responsive" />
-      </div>
+    {% for post in site.posts %}
+    {% capture thecycle %}{% cycle 'odd', 'even' %}{% endcapture %}
+    {% if thecycle == 'odd' %}
+      <div class="row article-row">
+        <div class="col-md-3 col-md-offset-2">
+          <a href="{{ post.permalink }}"><img src="{{site.baseurl}}{{post.featured-image}}" class="img-responsive" /></a>
+        </div>
 
-      <div class="col-md-6">
-        <article>
-          <span class="date">February 20, 2017</span> 
-          <br />
-          <a href=""><span class="title">Breakfast Smoothie</span></a> 
-          <div class="categories">
-            <a class="label label-default">Recipes</a>
-          </div>
-          <p>
-            Nulla sagittis, est et tincidunt blandit, tellus risus condimentum libero, rutrum porta lorem mauris nec dui. Phasellus imperdiet lacinia porttitor. Sed laoreet eget neque sit amet finibus...
-          </p>
-        </article>
+        <div class="col-md-6">
+          <article>
+            <span class="date">{{ post.date | date_to_long_string }}</span>
+            <br />
+            <a href="{{ post.permalink }}"><span class="title">{{ post.title }}</span></a>
+            <div class="categories">
+              <a class="label label-default">{{ post.categories }}</a>
+            </div>
+            <p>
+              {{ post.excerpt | strip_html | truncatewords: 40 }}
+            </p>
+          </article>
+        </div>
       </div>
-    </div>
+      {% else %}
+      <div class="row article-row">
+        <div class="col-md-6 col-md-offset-2">
+          <article>
+            <span class="date">{{ post.date | date_to_long_string }}</span>
+            <br />
+            <a href="{{ post.permalink }}"><span class="title">{{ post.title }}</span></a>
+            <div class="categories">
+              <a class="label label-default">{{ post.categories }}</a>
+            </div>
+            <p>
+              {{ post.excerpt | strip_html | truncatewords: 40 }}
+            </p>
+          </article>
+        </div>
 
-    <div class="row article-row">
-      <div class="col-md-6 col-md-offset-2">
-        <article>
-          <span class="date">February 12, 2017</span> 
-          <br />
-          <a href=""><span class="title">Mistreatment of Animals</span></a> 
-          <div class="categories">
-            <a class="label label-default">Nature</a> <a class="label label-default">Ethics</a>
-          </div>
-          <p>
-            Nulla sagittis, est et tincidunt blandit, tellus risus condimentum libero, rutrum porta lorem mauris nec dui. Phasellus imperdiet lacinia porttitor. Sed laoreet eget neque sit amet finibus...
-          </p>
-        </article>
+        <div class="col-md-3">
+          <a href="{{ post.permalink }}"><img src="{{site.baseurl}}{{ post.featured-image }}" class="img-responsive" /></a>
+        </div>
+        
       </div>
-
-      <div class="col-md-3">
-        <img src="{{site.baseurl}}/images/blog/sheep.jpg" class="img-responsive" />
-      </div>
-    </div>
-
-    <div class="row article-row">
-      <div class="col-md-3 col-md-offset-2">
-        <img src="{{site.baseurl}}/images/blog/strawberries.jpg" class="img-responsive" />
-      </div>
-
-      <div class="col-md-6">
-        <article>
-          <span class="date">January 29, 2017</span> 
-          <br />
-          <a href=""><span class="title">Daily Dozen</span></a> 
-          <div class="categories">
-            <a class="label label-default">Nutrition</a>
-          </div>
-          <p>
-            Nulla sagittis, est et tincidunt blandit, tellus risus condimentum libero, rutrum porta lorem mauris nec dui. Phasellus imperdiet lacinia porttitor...
-          </p>
-        </article>
-      </div>
-    </div>
-
-    <div class="row article-row">
-      <div class="col-md-6 col-md-offset-2">
-        <article>
-          <span class="date">January 11, 2017</span> 
-          <br />
-          <a href=""><span class="title">Greenhouse Gas</span></a> 
-          <div class="categories">
-            <a class="label label-default">Nature</a> <a class="label label-default">Global Warming</a>
-          </div>
-          <p>
-            Nulla sagittis, est et tincidunt blandit, tellus risus condimentum libero, rutrum porta lorem mauris nec dui. Phasellus imperdiet lacinia porttitor. Sed laoreet eget neque sit amet finibus...
-          </p>
-        </article>
-      </div>
-
-      <div class="col-md-3">
-        <img src="{{site.baseurl}}/images/blog/mossy.jpg" class="img-responsive" />
-      </div>
-    </div>
+      {% endif %}
+    {% endfor %}
   </div>
 </section>
