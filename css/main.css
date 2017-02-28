@@ -220,7 +220,8 @@ a:hover {
 }
 
 .blog-mast .category,
-.featured-article .category {
+.featured-article .category,
+.post-mast .category {
   font-family: 'Avenir', sans-serif;
   color: #fff;
   font-size: 18px;
@@ -230,7 +231,8 @@ a:hover {
 }
 
 .blog-mast .category.underline:after, 
-.featured-article .category.underline:after {
+.featured-article .category.underline:after,
+.post-mast .category.underline:after {
   background: #fff;
   height: 2px;
   max-width: 80px;
@@ -238,7 +240,8 @@ a:hover {
 }
 
 .blog-mast h1, 
-.featured-article h1 {
+.featured-article h1,
+.post-mast h1 {
   font-size: 72px;
   color: #fff;
   margin-top: 35px;
@@ -246,7 +249,8 @@ a:hover {
 }
 
 .blog-mast .subtitle, 
-.featured-article .subtitle {
+.featured-article .subtitle,
+.post-mast .subtitle {
   font-family: 'Avenir', sans-serif;
   text-transform: uppercase;
   text-align: center;
@@ -269,6 +273,10 @@ a:hover {
   transform: translate(-50%, -50%);
 }
 
+.post-mast .vertical-center {
+  width: 100%;
+  text-align: center;
+}
 
 /** Blog Page::About **/
 
@@ -321,6 +329,10 @@ article .categories .label-default {
   padding-bottom: 25px;
 }
 
+.posts .article-row img {
+  margin-top: 35px;
+}
+
 
 /** Blog Page: Posts **/
 
@@ -333,8 +345,35 @@ article .categories .label-default {
   font-size: 17px;
 }
 
-/** FOOTER **/
 
+/** Post Page **/
+
+.post-mast {
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  height: 800px;
+}
+
+.post-details > p {
+  font-size: 17px;
+  color: #888;
+}
+
+.post-content {
+  padding-bottom: 25px;
+}
+
+.post-content p {
+  line-height: 1.58;
+  margin-top: 29px;
+  font-size: 21px;
+}
+
+
+/** FOOTER **/
 
 footer {
   padding-top: 50px;
