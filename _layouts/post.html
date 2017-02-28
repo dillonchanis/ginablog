@@ -14,6 +14,13 @@ layout: template
 
       <h1>{{ page.title }}</h1>
       <h2 class="subtitle text-center">{{ page.subtitle }}</h2>
+
+      <div class="call-to-action text-center">
+        <a href="/blog/" class="btn btn-primary">
+          Back To Blog
+        </a>
+      </div>
+
     </div>  
   </div>
 </header>
@@ -23,7 +30,7 @@ layout: template
     <div class="col-md-8 col-md-offset-2 post-details">
       <p>
         {{ page.author }} <br />
-        on {{ page.date | date_to_long_string }}
+        on <time>{{ page.date | date: "%B %-d, %Y" }}</time>
       </p>
     </div>
     <div class="col-md-8 col-md-offset-2 post-content">
