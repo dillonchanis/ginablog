@@ -2,7 +2,6 @@
 layout: blog 
 ---
 
-
 <!-- About the Blog -->
 <section class="about">
   <div class="container container-padding">
@@ -69,7 +68,7 @@ layout: blog
 
         <div class="col-md-6">
           <article>
-            <span class="date">{{ post.date | date_to_long_string }}</span>
+            <time class="date">{{ post.date | date: "%B %-d, %Y" }}</time>
             <br />
             <a href="{{ post.permalink }}"><span class="title">{{ post.title }}</span></a>
             <div class="categories">
@@ -83,9 +82,9 @@ layout: blog
       </div>
       {% else %}
       <div class="row article-row">
-        <div class="col-md-6 col-md-offset-2">
+        <div class="col-md-6 col-md-offset-2 text-right">
           <article>
-            <span class="date">{{ post.date | date_to_long_string }}</span>
+            <time class="date">{{ post.date | date: "%B %-d, %Y" }}</time>
             <br />
             <a href="{{ post.permalink }}"><span class="title">{{ post.title }}</span></a>
             <div class="categories">
