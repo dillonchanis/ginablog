@@ -1,5 +1,7 @@
 --- 
-layout: blog 
+layout: blog
+paginate:
+  per_page: 5
 ---
 
 <!-- About the Blog -->
@@ -58,19 +60,19 @@ layout: blog
     </div>
 
     <!-- Articles -->
-    {% for post in site.posts %}
+    {% for post in paginator.posts %}
     {% capture thecycle %}{% cycle 'odd', 'even' %}{% endcapture %}
     {% if thecycle == 'odd' %}
       <div class="row article-row">
         <div class="col-md-3 col-md-offset-2">
-          <a href="{{ post.permalink }}"><img src="{{site.baseurl}}{{post.featured-image}}" class="img-responsive" /></a>
+          <a href="{{ post.url }}"><img src="{{site.baseurl}}{{post.featured-image}}" class="img-responsive" /></a>
         </div>
 
         <div class="col-md-6">
           <article>
             <time class="date">{{ post.date | date: "%B %-d, %Y" }}</time>
             <br />
-            <a href="{{ post.permalink }}"><span class="title">{{ post.title }}</span></a>
+            <a href="{{ post.url }}"><span class="title">{{ post.title }}</span></a>
             <div class="categories">
               <a class="label label-default">{{ post.categories }}</a>
             </div>
@@ -86,7 +88,7 @@ layout: blog
           <article>
             <time class="date">{{ post.date | date: "%B %-d, %Y" }}</time>
             <br />
-            <a href="{{ post.permalink }}"><span class="title">{{ post.title }}</span></a>
+            <a href="{{ post.url }}"><span class="title">{{ post.title }}</span></a>
             <div class="categories">
               <a class="label label-default">{{ post.categories }}</a>
             </div>
@@ -97,11 +99,28 @@ layout: blog
         </div>
 
         <div class="col-md-3">
-          <a href="{{ post.permalink }}"><img src="{{site.baseurl}}{{ post.featured-image }}" class="img-responsive" /></a>
+          <a href="{{ post.url }}"><img src="{{site.baseurl}}{{ post.featured-image }}" class="img-responsive" /></a>
         </div>
         
       </div>
       {% endif %}
     {% endfor %}
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <div class="pagination">
+          {% if paginator.previous_page %}
+            <a href="{{ paginator.previous_page_path }}" class="previous">Previous</a>
+          {% else %}
+            <span class="previous">Previous</span>
+          {% endif %}
+          <span class="page_number ">Page: {{ paginator.page }} of {{ paginator.total_pages }}</span>
+          {% if paginator.next_page %}
+            <a href="{{ paginator.next_page_path }}" class="next">Next</a>
+          {% else %}
+            <span class="next ">Next</span>
+          {% endif %}
+        </div>
+      </div>
+    </div>
   </div>
 </section>
