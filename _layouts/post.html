@@ -33,3 +33,26 @@ layout: template
 </article>
 
 <!-- Next/Prev Post Goes here -->
+
+<script>
+// Replicate jQuery's $(document).ready
+function ready(fn) {
+  if (document.readyState != 'loading'){
+    fn();
+  } else {
+    document.addEventListener('DOMContentLoaded', fn);
+  }
+}
+
+// When DOM is Ready
+ready(function() {
+  // Add Class of "current" to our "Blog" <li> in the navigation
+  const current = document.getElementsByClassName('blog-li');
+
+  // Since we have two (Header/Footer), 
+  // make sure to iterate to get each
+  for(let i = 0; i < current.length; i++) {
+    current[i].classList += " current";
+  }
+});
+</script>
