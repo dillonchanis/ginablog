@@ -74,7 +74,7 @@ paginate:
             <br />
             <a href="{{ post.url }}"><span class="title">{{ post.title }}</span></a>
             <div class="categories">
-              <a class="label label-default">{{ post.categories }}</a>
+              <a href="/archives#{{ post.categories }}" class="label label-default">{{ post.categories }}</a>
             </div>
             <p>
               {{ post.excerpt | strip_html | truncatewords: 40 }}
@@ -90,7 +90,7 @@ paginate:
             <br />
             <a href="{{ post.url }}"><span class="title">{{ post.title }}</span></a>
             <div class="categories">
-              <a class="label label-default">{{ post.categories }}</a>
+              <a href="/archives#{{ post.categories }}" class="label label-default">{{ post.categories }}</a>
             </div>
             <p>
               {{ post.excerpt | strip_html | truncatewords: 40 }}
@@ -105,6 +105,8 @@ paginate:
       </div>
       {% endif %}
     {% endfor %}
+
+    <!-- Pagination -->
     <div class="row">
       <div class="col-md-12 text-center">
         <div class="pagination">
