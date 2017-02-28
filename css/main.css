@@ -109,6 +109,10 @@ a:hover {
   padding-right: 10px;
 }
 
+.blog-nav ul li a {
+  color: #86a590;
+}
+
 .blog-nav ul li.current a {
   color: #9cffbd;
 }
