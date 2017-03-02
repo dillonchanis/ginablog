@@ -330,6 +330,11 @@ article .categories .label-default {
   background-color: #e9ac00;
 }
 
+article .categories a,
+article .categories a:visited {
+  color: #fff;
+}
+
 .posts .article-row {
   padding-top: 25px;
   padding-bottom: 25px;
@@ -337,6 +342,12 @@ article .categories .label-default {
 
 .posts .article-row img {
   margin-top: 35px;
+  -webkit-backface-visibility: hidden;
+  transition: opacity 0.3s;
+}
+
+.posts .article-row img:hover {
+  opacity: 0.8
 }
 
 
