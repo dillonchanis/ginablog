@@ -2,7 +2,7 @@
 layout: blog
 title: 'Blog'
 paginate:
-  per_page: 5
+  per_page: 4
 ---
 
 <!-- About the Blog -->
@@ -62,8 +62,6 @@ paginate:
 
     <!-- Articles -->
     {% for post in paginator.posts %}
-    {% capture thecycle %}{% cycle 'odd', 'even' %}{% endcapture %}
-    {% if thecycle == 'odd' %}
       <div class="row article-row">
         <div class="col-md-3 col-md-offset-2">
           <a href="{{ post.url }}"><img src="{{site.baseurl}}{{post.featured-image}}" class="img-responsive" /></a>
@@ -83,28 +81,6 @@ paginate:
           </article>
         </div>
       </div>
-      {% else %}
-      <div class="row article-row">
-        <div class="col-md-6 col-md-offset-2 text-right">
-          <article>
-            <time class="date">{{ post.date | date: "%B %-d, %Y" }}</time>
-            <br />
-            <a href="{{ post.url }}"><span class="title">{{ post.title }}</span></a>
-            <div class="categories">
-              <a href="/archives#{{ post.categories }}" class="label label-default">{{ post.categories }}</a>
-            </div>
-            <p>
-              {{ post.excerpt | strip_html | truncatewords: 40 }}
-            </p>
-          </article>
-        </div>
-
-        <div class="col-md-3">
-          <a href="{{ post.url }}"><img src="{{site.baseurl}}{{ post.featured-image }}" class="img-responsive" /></a>
-        </div>
-        
-      </div>
-      {% endif %}
     {% endfor %}
 
     <!-- Pagination -->
