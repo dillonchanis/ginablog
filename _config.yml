@@ -1,4 +1,2 @@
 exclude: ['README.md']
 permalink: pretty
-gems:
-  - jekyll-paginate
