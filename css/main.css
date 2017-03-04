@@ -522,6 +522,10 @@ footer nav ul.list-unstyled li.current a {
 }
 
 @media screen and (max-width: 450px) {
+  .tulip-container {
+    margin-top: -120px;
+  }
+
   .picture-frame {
     width: 325px;
     margin-top: -200px;
