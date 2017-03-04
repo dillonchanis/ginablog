@@ -402,6 +402,10 @@ article .categories a:visited {
   width: 600px;
 }
 
+.section-404 {
+  padding-bottom: 55px;
+}
+
 .articles-404 {
   padding: 55px 0;
   background: #eee;
