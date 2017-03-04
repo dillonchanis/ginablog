@@ -396,6 +396,35 @@ article .categories a:visited {
   font-size: 21px;
 }
 
+/** 404 **/
+
+.img-404 {
+  width: 600px;
+}
+
+.articles-404 {
+  padding: 55px 0;
+  background: #eee;
+}
+
+.articles-404 .article-row {
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+.articles-404 .article-row img {
+  margin-top: 35px;
+  -webkit-backface-visibility: hidden;
+  transition: opacity 0.3s;
+}
+
+.articles-404 .article-row img:hover {
+  opacity: 0.8
+}
+
+.articles-404 p {
+  font-size: 17px;
+}
 
 /** FOOTER **/
 
