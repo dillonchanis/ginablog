@@ -6,28 +6,28 @@ title: 'Home'
 <header class="mast">
   <div class="container flower-container text-center">
     <header>
-      <h1 class="rellax" data-rellax-speed="2">
+      <h1 class="rellax" data-rellax-speed="2" data-aos="fade-up">
         A <span class="green">plant</span> <br /> based lifestyle
       </h1>
     </header>
     <div class="tulip-container rellax" data-rellax-speed="1">
-      <img src="{{site.baseurl}}/images/home/tulip-bg.png" />
+      <img src="{{site.github.urll}}/images/home/tulip-bg.png" />
     </div>
 
     <div class="petals petal-1">
-      <img src="{{site.baseurl}}/images/home/flower-bud-1.png" />
+      <img src="{{site.github.urll}}/images/home/flower-bud-1.png" />
     </div>
 
     <div class="petals petal-2 rellax" data-rellax-speed="3">
-      <img src="{{site.baseurl}}/images/home/tulip-petal-2.png" />
+      <img src="{{site.github.urll}}/images/home/tulip-petal-2.png" />
     </div>
 
     <div class="petals petal-3 rellax" data-rellax-speed="2">
-      <img src="{{site.baseurl}}/images/home/tulip-petal-1.png" />
+      <img src="{{site.github.urll}}/images/home/tulip-petal-1.png" />
     </div>
 
     <div class="petals petal-4">
-      <img src="{{site.baseurl}}/images/home/flower-bud-1.png" />
+      <img src="{{site.github.urll}}/images/home/flower-bud-1.png" />
     </div>
   </div>
 </header>
@@ -50,7 +50,7 @@ title: 'Home'
 
       </div>
       <div class="picture">
-        <img src="{{site.baseurl}}/images/home/gina-baker.jpg" />
+        <img src="{{site.github.urll}}/images/home/gina-baker.jpg" />
         <div class="picture-frame"></div>
       </div>
     </div>
@@ -59,21 +59,21 @@ title: 'Home'
 
 <section class="articles">
   <div class="container">
-    <div class="row">
+    <div class="row" data-aos="fade-up">
       <div class="col-md-6 col-md-offset-1">
         <h2 class="underline">Recent Articles</h2>
 
         {% for post in site.posts limit: 4 %}
-        <article>
+        <article data-aos="fade-up">
           <time class="date">{{ post.date | date: "%B %-d, %Y" }}</time> <br />
           <a href="{{ post.permalink }}"><span class="title">{{ post.title }}</span></a>
         </article>
         {% endfor %}
       </div>
     </div>
-    <div class="row">
+    <div class="row" data-aos="fade-up">
       <div class="col-md-8 col-md-offset-1">
-        <a href="{{site.baseurl}}/blog/" class="btn btn-primary btn-green">
+        <a href="{{site.github.urll}}/blog/" class="btn btn-primary btn-green">
           Go To Blog
         </a>
       </div>
